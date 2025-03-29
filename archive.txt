@@ -1,0 +1,1 @@
+static files to use in external repository 
