@@ -19,7 +19,26 @@
     
     <script>
 
-      
+      let mainaudio = new Audio() 
+
+      let songs = [] 
+      songs[0] = 'chiaradeczeinunddenselben.mp3' 
+      songs[1] = 'despinavandikatipigelathos.mp3'
+
+
+      let path2 = 'https://leonardosotelo89.github.io/functional_radioshow_archive1/songs100to199/' 
+
+function randomfrom(array) {
+  let random = parseInt(Math.random() * songs.length)
+mainaudio.src = path2 + songs[random] 
+mainaudio.play() 
+  
+ mainaudio.onended = function () {
+  randomfrom(songs) 
+ }  
+} 
+
+     document.body.onclick = () => randomfrom(songs) 
     </script>
   </body>
 </html>
