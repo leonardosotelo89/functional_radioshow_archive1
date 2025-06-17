@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <style>
+      *{margin:0px;padding:0px;box-sizing:border-box;} 
+
+      body{
+        background-color:rgb(0,0,0);
+        color:#00ff00;
+       } 
+    </style>
+  </head>
+  <body>
+
+<marquee behavior="scroll" ><h1>leonardosotelo89</h1></marquee>
+
+
+
+
+    
+    <script>
+      
+  const mainaudio = new Audio();
+  let songs = [];
+      //local folder
+  const path1 = 'songs100to199/'; //la carpeta local
+      //absolut url
+  const path2 = 'https://leonardosotelo89.github.io/functional_radioshow_archive1/songs100to199/' 
+
+  function randomfrom(array) {
+    const random = Math.floor(Math.random() * array.length);
+    mainaudio.src = path2 + array[random];
+    mainaudio.play();
+    mainaudio.onended = () => randomfrom(array);
+  }
+
+  fetch('songs100to199.json')
+    .then(response => response.json())
+    .then(data => {
+      songs = data;
+      console.log('Canciones cargadas:', songs.length);
+      document.body.onclick = () => randomfrom(songs);
+      // Si quieres autoplay:
+      // randomfrom(songs);
+    })
+    .catch(err => console.error('Error cargando JSON:', err));
+    </script>
+  </body>
+</html>
