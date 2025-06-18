@@ -41,8 +41,9 @@
       document.body.onclick = () => randomfrom(songs);
       // Si quieres autoplay:
       // randomfrom(songs);
+      randomFrom(songs) 
     })
-    .catch(err => console.error('Error cargando JSON:', err));
+    .catch(error => console.error('Error cargando JSON:', error));
     </script>
   </body>
 </html>
