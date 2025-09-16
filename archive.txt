@@ -1,1 +1,13 @@
 static files to use in external repository 
+
+to serve files via absolut url the repository must have
+github pages activated, to do that go to 
+settings
+pages
+build and deployment
+choose deploy from branch 
+choose a branch (main by default) 
+and save
+
+doesn't require an index.html if you only need to serve files 
+
